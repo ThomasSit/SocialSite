@@ -1,6 +1,6 @@
 <?php
 include "include/header.php";
-include "include/navbar.php";
+
 
 // hier checkt ie of user leeg is
     if(!empty($_POST['user'])) {
@@ -14,7 +14,7 @@ include "include/navbar.php";
     }
 
     if ($_SESSION['logon'] == true) {
-        echo "<p>Welkom". $_SESSION['user'] . "</p>";
+        echo "<p>Welkom" . $_SESSION['user'] . "</p>";
     }else{
      header( "location:login_form.php");
 }

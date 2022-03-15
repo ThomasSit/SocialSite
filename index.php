@@ -9,13 +9,23 @@ session_start();
 //    exit();
 //}
 
+
+// bepaalde groote maximaal van de image
+CONST MAX_IMAGE_SIZE = 1024 * 1024 * 1024;
+// Directery naar de folder uploads CONST staat voor contstant
+CONST IMAGE_FOLDER = 'uploads/';
+
+// De image check
+include('function.php');
+
 include "include/header.php";
+include "include/navbar.php";
 include "include/login.php";
+include "list.post.php";
 include "include/footer.php";
+
+
+
 
 ?>
 
-<form action="" method="POST">
-    <input type="hidden" name="logout" value="1">
-<input type="submit" value="logout";
-</form>

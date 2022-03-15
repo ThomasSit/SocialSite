@@ -10,35 +10,37 @@
 
 
 
+
+
     $auteur = "";
 
-    if (!empty($student)) {
+    if (!empty($gebruiker)) {
 
-        $auteur = $student["auteur"];
+        $auteur = $gebruiker["auteur"];
 
     }
 
     $titel = "";
 
-    if (!empty($student)) {
+    if (!empty($gebruiker)) {
 
-        $titel  = $student["titel"];
+        $titel  = $gebruiker["titel"];
 
     }
 
     $bericht = "";
 
-    if (!empty($student)) {
+    if (!empty($gebruiker)) {
 
-        $bericht = $student["bericht"];
+        $bericht = $gebruiker["bericht"];
 
     }
 
     $afbeelding = "";
 
-    if (!empty($student)) {
+    if (!empty($gebruiker)) {
 
-        $afbeelding = $student["afbeelding"];
+        $afbeelding = $gebruiker["afbeelding"];
 
     }
 

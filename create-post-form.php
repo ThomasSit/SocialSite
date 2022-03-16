@@ -57,7 +57,7 @@
     </div>
 
     <div class="form-group">
-        <label for="Titel"> bericht </label>
+        <label for="Titel"> titel </label>
         <input class="form-control" type="text" id="titel" name="titel"
                value="<?php echo $titel;?>"required>
     </div>

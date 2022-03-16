@@ -83,10 +83,9 @@ $sth->execute();
             <td><?php echo $row["titel"]; ?></td>
 
             <td><?php echo $row['bericht'];?> </td>
-
-            <td><img src="uploaded/<?php echo $row['afbeelding'];?>" </td>
-
-
+        <div id="image_size">
+            <td ><img src="uploaded/<?php echo $row['afbeelding'];?>"> </td>
+        </div>
 
 
             <td><a class="btn btn-primary" href="update.post.form.php?id=<?php echo $row["id"]?>"> Wijzig </a>  </td>

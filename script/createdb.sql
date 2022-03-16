@@ -23,3 +23,6 @@ CREATE TABLE Post (
 
 
 );
+
+
+DElete FROM post where id = 18;

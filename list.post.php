@@ -90,7 +90,7 @@ $sth->execute();
 
             <td><a class="btn btn-primary" href="update.post.form.php?id=<?php echo $row["id"]?>"> Wijzig </a>  </td>
 
-            <td> <button onclick=confirmDelete(<?php echo $row["id"];?>)  class="btn btn-danger">Verwijder</button></td>
+            <td> <button onclick="confirmDelete(<?php echo $row["id"];?>)"  class="btn btn-danger">Verwijder</button></td>
 
         </tr>
 

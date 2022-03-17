@@ -25,4 +25,4 @@ CREATE TABLE Post (
 );
 
 
-DElete FROM post where id = 18;
+DElete FROM post where id = 3;

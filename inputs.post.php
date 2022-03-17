@@ -56,8 +56,7 @@ if (!empty($gebruiker)) {
 
 <div class="form-group">
     <label for="Titel"> afbeelding </label>
-    <input class="form-control" type="file
-" id="afbeelding" name="afbeelding"
+    <input class="form-control" type="file" id="afbeelding" name="afbeelding"
            value="<?php echo $afbeelding;?>"required>
 </div>
 

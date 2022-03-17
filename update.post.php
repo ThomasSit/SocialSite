@@ -12,7 +12,7 @@ $id=$_POST["id"];
 
 
 
-$sql = "INSERT INTO post(auteur, titel, bericht, afbeelding) VALUES (:auteur , :titel, :bericht, :afbeelding)";
+
 
 $sql= "UPDATE post SET auteur = :auteur, titel = :titel, bericht = :bericht, afbeelding= :afbeelding
                  

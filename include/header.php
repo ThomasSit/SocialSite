@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css2/bootstrap.min.css">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.js"> </script>
+    <script src="http://kit.fontawesome.com/f6dcf461c1.js" crossorigin="anonymous"></script>
     <title>Social Site</title>
 </head>
 <body>

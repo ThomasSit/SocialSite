@@ -39,6 +39,61 @@ $sth->execute();
                 window.location.href = 'index.php';
 
                 window.location.reload(true);});}
+
+// de like button
+    /*
+    function likesPost(postId) {
+        console.log(postId);
+        $.get("create.likes.php",
+
+            {id: postId}).then(
+
+            function() {
+                var likeStr = document.getElementById("likes"+postId).innerHTML;
+                likeInt = parseInt(likeStr);
+                likeInt++;
+                document.getElementById("likes"+postId).innerHTML = '' + likeInt;
+
+            });
+    }*/
+    function likesPost(postId) {
+        console.log(postId);
+        fetch('create.likes.php?id=' + postId)
+            .then()
+            .then(response => {
+                console.log("succes");
+            })
+    }
+
+
+
+            function deletelikesPost(postId) {
+                console.log(postId);
+                fetch('delete.likes.php?id=' + postId)
+                .then()
+                .then(response => {
+                    console.log("succes");
+                })
+            }
+
+    /*
+    function deletelikesPost(postId) {
+        console.log(postId);
+        $.get('delete.likes.php',
+
+            {id: postId}).then(
+
+            function() {
+
+                var likeStr = document.getElementById("likes"+postId).innerHTML;
+                likeInt = parseInt(likeStr);
+                likeInt--;
+                document.getElementById("likes"+postId).innerHTML = '' + likeInt;
+
+            });
+
+    }
+*/
 </script>
 
 
@@ -87,12 +142,28 @@ $sth->execute();
             <td ><img src="uploaded/<?php echo $row['afbeelding'];?>"> </td>
         </div>
 
-
             <td><a class="btn btn-primary" href="update.post.form.php?id=<?php echo $row["id"]?>"> Wijzig </a>  </td>
 
             <td> <button onclick="confirmDelete(<?php echo $row["id"];?>)"  class="btn btn-danger">Verwijder</button></td>
 
-        </tr>
+
+   <!---De stukje--!>
+
+
+
+            <td><button onclick="likesPost(<?php echo $row["id"]?>)" class="like__btn">
+                    <span id="icon"><i class="far fa-thumbs-up"></i></span>
+                    <span id="count"></span> Like
+                </button>
+            </td>
+            <td>
+                <div id="likes<?php echo $row["id"]?>"><?php echo $row["likes"];?></div>
+            </td>
+            <td><button onclick="deletelikesPost(<?php echo $row["id"]?>)" class="like__btn">
+                    <span id="icon"><i class="far fa-thumbs-down"></i></span>
+                    <span id="count"></span> unlike
+                </button>
+            </td>
 
     <?php } ?>
 

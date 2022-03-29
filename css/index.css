@@ -1,3 +1,19 @@
+/**{
+    height: 150px;
+    width: 200px;
+    background-color: red; !* For browsers that do not support gradients *!
+    background-image: repeating-radial-gradient(red, yellow 10%, green 15%);x
+}*/
+
+
+.doos{
+    border: solid 3px black;
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 20px;
+    font-size: 20px;4
+}
 
 
 #image_size{

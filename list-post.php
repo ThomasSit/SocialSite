@@ -100,74 +100,75 @@ $sth->execute();
 
 
 
-<table class="table">
-
-    <thead>
-
-    <tr>
-
-        <th>Id</th>
-
-        <th>auteur</th>
-
-        <th>Achternaam</th>
-
-        <th>titel</th>
-
-        <th>bericht</th>
-
-        <th>afbeelding</th>
-
-        <th> Verwijder</th>
-    </tr>
-
-    </thead>
 
 
 
-    <tbody>
 
-    <?php while($row = $sth->fetch()) { ?>
-<!-- soort van foreach loop  --!>
-        <tr>
 
-            <td><?php echo $row["id"]; ?></td>
+    <tbody >
 
-            <td><?php echo $row["auteur"]; ?></td>
+     <?php while($row = $sth->fetch()) {;?>
+<!-- soort van foreach loop  -->
 
-            <td><?php echo $row["titel"]; ?></td>
+        <div class="doos">
 
-            <td><?php echo $row['bericht'];?> </td>
-        <div id="image_size">
-            <td ><img src="uploaded/<?php echo $row['afbeelding'];?>"> </td>
-        </div>
+         <th><?php echo $row["id"]; ?></th><br>
+
+            <th><?php echo $row["auteur"]; ?></th><br>
+
+            <a href="listcomment.php?id=<?php echo $row["id"]?>"><td>Titel:<?php echo $row["titel"]; ?><br></td></a><th><?php echo $row["titel"]; ?></th><br>
+
+            <th><?php echo $row['bericht'];?> </th><br>
+
+            <td id="image_size">
+                    <img src="uploaded/<?php echo $row['afbeelding'];?>"><br>
+            </td>
+
+
 
             <td><a class="btn btn-primary" href="update.post.form.php?id=<?php echo $row["id"]?>"> Wijzig </a>  </td>
 
-            <td> <button onclick="confirmDelete(<?php echo $row["id"];?>)"  class="btn btn-danger">Verwijder</button></td>
-
-
-   <!---De stukje--!>
-
-
-
+            <td> <button onclick="confirmDelete(<?php echo $row["id"];?>)"  class="btn btn-danger">Verwijder</button></td><br>
+   <!---De stukje-->
             <td><button onclick="likesPost(<?php echo $row["id"]?>)" class="like__btn">
                     <span id="icon"><i class="far fa-thumbs-up"></i></span>
                     <span id="count"></span> Like
                 </button>
             </td>
+
             <td>
-                <div id="likes<?php echo $row["id"]?>"><?php echo $row["likes"];?></div>
+                <div id="likes<?php echo $row["id"]?>"><?php echo $row["Likes"];?></div>
             </td>
             <td><button onclick="deletelikesPost(<?php echo $row["id"]?>)" class="like__btn">
                     <span id="icon"><i class="far fa-thumbs-down"></i></span>
                     <span id="count"></span> unlike
                 </button>
+
             </td>
+        </div>
 
-    <?php } ?>
 
 
+            <td>
+                <form action="create-comment.php" method="post">
+                    <input id="like" type="hidden" name="id" value="<?php echo($row["id"]); ?>">
+                    <textarea class="form-control" type="text" name="comment" rows="3" required></textarea>
+                    <br>
+                    <input type="submit" name="" value="comment" class="btn btn-primary">
+                </form>
+                <h1>Comments:</h1>
+                <div>
+                    <?php
+                    }
+                    // hier gaat samen de post en comment table samenvoegen van post table naar comment table
+                    $sql2 = "SELECT * FROM post b JOIN comment c ON (c.post_id = b.id) WHERE c.post_id = b.id AND b.id = :id";
+                    $sth2 = $db->prepare($sql2);
+                    $sth2->execute([':id' => $row["id"]]);
+                    while($row = $sth2->fetch()){ ?>
+
+            <td><?php echo $row["comment"]; echo "<br>"?> </td>
+            </td>
+        <?php } ?>
 
     </tbody>
 

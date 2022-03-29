@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS Post;
 
 CREATE TABLE Post (
 
-                         id INT NOT NULL AUTO_INCREMENT,
+                      id INT NOT NULL AUTO_INCREMENT,
 
                          auteur VARCHAR(50),
 
@@ -20,16 +20,26 @@ CREATE TABLE Post (
 
                          afbeelding VARCHAR(225),
 
-                         Likes InT NOT NULL,
+                         Likes INT NOT NULL,
 
-                         PRIMARY KEY (id)
+                        comment_id INT NOT NULL,
+
+                        message TEXT NOT NULL,
+
+                      PRIMARY KEY (id)
 
 
 
 );
-ALTER TABLE post ADD likes INT;
 
-ALTER TABLE post DROP likes;
+DROP TABLE IF EXISTS comment;
 
+CREATE TABLE comment
+(
 
-DElete FROM post where id = 3;
+    id INT NOT NULL AUTO_INCREMENT,
+    comment VARCHAR (500),
+    post_id INT NOT NULL,
+    PRIMARY KEY (id)
+);
+

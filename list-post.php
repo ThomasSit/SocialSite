@@ -158,17 +158,26 @@ $sth->execute();
                 </form>
                 <h1>Comments:</h1>
                 <div>
-                    <?php
-                    }
+          <!--          <?php
+/*                    }
                     // hier gaat samen de post en comment table samenvoegen van post table naar comment table
                     $sql2 = "SELECT * FROM post b JOIN comment c ON (c.post_id = b.id) WHERE c.post_id = b.id AND b.id = :id";
                     $sth2 = $db->prepare($sql2);
                     $sth2->execute([':id' => $row["id"]]);
-                    while($row = $sth2->fetch()){ ?>
+                    while($row = $sth2->fetch()){ */?>
 
-            <td><?php echo $row["comment"]; echo "<br>"?> </td>
+            <td><?php /*echo $row["comment"]; echo "<br>"*/?> </td>
             </td>
-        <?php } ?>
+        --><?php /*} */?>
+
+         <?php
+         $sql2 = "SELECT * FROM comment WHERE post_id=:post_id";
+         $sth2 = $db->prepare($sql2);
+         while($row2 = $sth2->fetch() ) {?>
+             <td><?php echo $row2["comment"]; echo "br" ?></td>
+         <?php } ?>
+
+     <?php } ?>
 
     </tbody>
 

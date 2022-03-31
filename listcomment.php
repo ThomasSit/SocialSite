@@ -168,12 +168,10 @@ $sth->execute([':id'=>$id]);
     <div>
 
     <?php
-    /*
-    $id=$_GET['post_id'];
-    $comment=$_GET['comment'];
-    */
+
     $sql2 = "SELECT * FROM comment WHERE post_id=:id";
     $sth2 = $db->prepare($sql2);
+    //verschil tussen $row en $row2 is $row is voor de post en $row2 was voor de comment table
     $sth2->execute([':id'=>$row["id"]]);
     while($row2 = $sth2->fetch() ) {
          /*print_r($row['comment'])*/?>

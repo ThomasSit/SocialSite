@@ -16,6 +16,8 @@ if ($id === false) {
     die("Geen ID gegeven...");
 }
 
+
+
 $sql = "SELECT * FROM post where id=:id";
 
 $sth = $db->prepare($sql);
@@ -23,6 +25,8 @@ $sth = $db->prepare($sql);
 $sth->execute([':id'=>$id]);
 
 ?>
+
+
 
 <script>
     /* Wat is die “$”? Het dollarteken “$” is een afkorting voor jQuery. Je mag deze afkorting gebruiken
@@ -121,7 +125,8 @@ $sth->execute([':id'=>$id]);
 <tbody >
 <div class="doos">
 <?php while($row = $sth->fetch()) {;?>
-    <!-- soort van foreach loop  -->
+    <!-- soort van foreach loop het is eigelijk een while loop -->
+
 
 
 
@@ -138,12 +143,12 @@ $sth->execute([':id'=>$id]);
         </td>
 
 
-        <?php  print_r($row);?>
+     <!--   --><?php /* print_r($row);*/?>
 
 
         <td><a class="btn btn-primary" href="update.post.form.php?id=<?php echo $row["id"]?>"> Wijzig </a>  </td>
 
-        <td> <button onclick="confirmDelete(<?php echo $row["id"];?>)"  class="btn btn-danger">Verwijder</button></td><br>
+        <td> <button onclick="confirmDelete(<?php echo $row["id"];?>)"  class="btn btn-danger">Verwijder</button></td><br><br>
         <!---De stukje-->
 
 
@@ -163,12 +168,16 @@ $sth->execute([':id'=>$id]);
     <div>
 
     <?php
-
-    $sql2 = "SELECT * FROM comment WHERE post_id=:post_id";
+    /*
+    $id=$_GET['post_id'];
+    $comment=$_GET['comment'];
+    */
+    $sql2 = "SELECT * FROM comment WHERE post_id=:id";
     $sth2 = $db->prepare($sql2);
+    $sth2->execute([':id'=>$row["id"]]);
     while($row2 = $sth2->fetch() ) {
-         print_r($row['comment'])?>
-        <td><?php echo $row2["comment"]; echo "br" ;?></td>
+         /*print_r($row['comment'])*/?>
+        <td><?php echo $row2["comment"]; echo "br" ;?></td><br>
     <?php } ?>
 
 <?php } ?>

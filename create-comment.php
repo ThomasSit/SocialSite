@@ -1,6 +1,6 @@
 <?php
 include "./connect/connect.php";
-include "include/header.php";
+include "include/head.php";
 
 $post_id=$_POST['id'];
 $comment=$_POST['comment'];

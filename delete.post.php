@@ -20,7 +20,7 @@ $row = $sth->fetch();
 // voor file weghalen
 unlink("C:\xampp\htdocs\phpstorm\PhpstormProjects\SocialSite\uploaded" . $row['afbeelding']);
 
-$sql = "DELETE FROM post WHERE id= :id";
+$sql = "DELETE FROM post WHERE id=:id";
 
 $sth = $db-> prepare($sql);
 

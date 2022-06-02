@@ -1,4 +1,4 @@
-<?php include "./include/header.php";?>
+<?php include "./include/head.php";?>
 
 <body>
 <?php include "read.post.php";?>

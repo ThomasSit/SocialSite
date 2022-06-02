@@ -1,23 +1,18 @@
-/**{
-    height: 150px;
-    width: 200px;
-    background-color: red; !* For browsers that do not support gradients *!
-    background-image: repeating-radial-gradient(red, yellow 10%, green 15%);x
-}*/
+body{
+    background-color: #0b2e13;
+    margin: 0px;
+    padding:0px;
 
-
-.doos{
-    border: solid 3px black;
-    text-align: center;
-    margin-left: 500px;
-    margin-right: 500px;
-    margin-bottom: 20px;
-    font-size: 20px;
 }
+
+
+
+
 
 
 #image_size{
     width: 10%;
+    height: 10%;
 }
 
 
@@ -37,7 +32,7 @@ li {
 
 li a {
     display: block;
-    color: blue;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -55,5 +50,26 @@ li a:hover {
 
 
 .ding{
+
+}
+.doos{
+    border: solid 3px black;
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.box {
+text-align: center;
+    border: 1px solid black;
+}
+
+.doosform{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 
 }

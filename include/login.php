@@ -1,5 +1,5 @@
 <?php
-include "include/header.php";
+include "include/head.php";
 
 
 // hier checkt ie of user leeg is
@@ -14,7 +14,7 @@ include "include/header.php";
     }
 
     if ($_SESSION['logon'] == true) {
-        echo "<p>Welkom" . $_SESSION['user'] . "</p>";
+        echo "<p>Welkom " . $_SESSION['user'] . "</p>";
     }else{
      header( "location:login_form.php");
 }

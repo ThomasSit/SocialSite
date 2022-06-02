@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 include "./connect/connect.php";
 
@@ -6,7 +6,7 @@ $sql = "SELECT * FROM post";
 
 $sth = $db->prepare($sql);
 
-$sth->execute();
+$sth->execute();    
 
 ?>
 
@@ -56,12 +56,12 @@ $sth->execute();
 
             });
     }*/
-    function likesPost(postId) {
-        console.log(postId);
-        fetch('create.likes.php?id=' + postId)
-            .then()
-            .then(response => {
-                console.log("succes");
+            function likesPost(postId) {
+             console.log(postId);
+                fetch('create.likes.php?id=' + postId)
+                 .then()
+                    .then(response => {
+                        console.log("succes");
             })
     }
 
@@ -69,10 +69,10 @@ $sth->execute();
 
             function deletelikesPost(postId) {
                 console.log(postId);
-                fetch('delete.likes.php?id=' + postId)
-                .then()
-                .then(response => {
-                    console.log("succes");
+                 fetch('delete.likes.php?id=' + postId)
+                    .then()
+                        .then(response => {
+                          console.log("succes");
                 })
             }
 
@@ -132,7 +132,7 @@ $sth->execute();
    <!---De stukje-->
             <td><button onclick="likesPost(<?php echo $row["id"]?>)" class="like__btn">
                     <span id="icon"><i class="far fa-thumbs-up"></i></span>
-                    <span id="count"></span> Like
+                    <span id="count"></span> <a href="index.php">Like</a>
                 </button>
             </td>
 
@@ -141,7 +141,7 @@ $sth->execute();
             </td>
             <td><button onclick="deletelikesPost(<?php echo $row["id"]?>)" class="like__btn">
                     <span id="icon"><i class="far fa-thumbs-down"></i></span>
-                    <span id="count"></span> unlike
+                    <span id="count"></span> <a href="index.php">unlike</a>
                 </button>
 
             </td>
@@ -156,7 +156,7 @@ $sth->execute();
                     <br>
                     <input type="submit" name="" value="comment" class="btn btn-primary">
                 </form>
-                <h1>Comments:</h1>
+
                 <div>
           <!--          <?php
 /*                    }
@@ -171,11 +171,18 @@ $sth->execute();
         --><?php /*} */?>
 
          <?php
-         $sql2 = "SELECT * FROM comment WHERE post_id=:post_id";
+
+         $sql2 = "SELECT * FROM comment WHERE post_id=:id";
          $sth2 = $db->prepare($sql2);
-         while($row2 = $sth2->fetch() ) {?>
-             <td><?php echo $row2["comment"]; echo "br" ?></td>
+         //verschil tussen $row en $row2 is $row is voor de post en $row2 was voor de comment table
+         $sth2->execute([':id'=>$row["id"]]);
+         while($row2 = $sth2->fetch() ) {
+             /*print_r($row['comment'])*/?>
+                 <div class="box">
+             <td><?php echo $row2["comment"]; echo "" ;?></td><br>
+
          <?php } ?>
+ </div>
 
      <?php } ?>
 

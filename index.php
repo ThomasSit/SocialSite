@@ -13,7 +13,7 @@ session_start();
 
 
 
-include "include/header.php";
+include "include/head.php";
 include "include/navbar.php";
 include "include/login.php";
 include "list-post.php";

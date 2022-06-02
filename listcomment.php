@@ -1,5 +1,5 @@
 <?php
-include "./include/header.php";
+include "./include/head.php";
 include "./connect/connect.php";
 
 $id = false;
@@ -175,8 +175,9 @@ $sth->execute([':id'=>$id]);
     $sth2->execute([':id'=>$row["id"]]);
     while($row2 = $sth2->fetch() ) {
          /*print_r($row['comment'])*/?>
-        <td><?php echo $row2["comment"]; echo "br" ;?></td><br>
+        <td><?php echo $row2["comment"]; echo "" ;?></td><br>
     <?php } ?>
+<input type="button" value="back" onclick="history.back()">
 
 <?php } ?>
 

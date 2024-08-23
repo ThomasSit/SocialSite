@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <ul>
 
     <li>
@@ -13,18 +6,15 @@
 </ul>
 
 <ul>
-<li>
-    <a class="ding" href="create-post-form.php"> Post </a>
-</li>
+    <li>
+        <a class="ding" href="create-post-form.php"> Post </a>
+    </li>
 
 </ul>
 <ul>
-
     <Li>
         <a class="ding" href="./index.php">home</a>
     </Li>
 </ul>
 
 <br> <br>
-
-

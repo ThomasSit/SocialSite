@@ -1,17 +1,15 @@
 <?php include "./include/head.php";
 
-
 session_start();
 ?>
 
-
-    <form action="index.php" method="POST" class="doosform" >
+<form action="index.php" method="POST" class="doosform">
     gebruikersnaam:
-        <input type="text" name="user" required>
+    <input type="text" name="user" required>
     Wachtwoord:
-         <input type="password" name="pass" required>
-        <input type="submit"  value="inloggen">
+    <input type="password" name="pass" required>
+    <input type="submit" value="inloggen">
 </form>
 
 
-<?php include "./include/footer.php"?>
+<?php include "./include/footer.php" ?>

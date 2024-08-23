@@ -1,87 +1,61 @@
-<?php include "./include/head.php";?>
+<?php include "./include/head.php"; ?>
 
+<?php include "./include/navbar.php"; ?>
 
-<?php include "./include/navbar.php";?>
+<!-- <form action="create-post.php" method="POST" enctype="multipart/form-data"> -->
+<!-- create-post.php -->
+
 
 <form action="create-post.php" method="POST" enctype="multipart/form-data">
-
-
-    <?php
-
-
-
-
-
-    $auteur = "";
-
-    if (!empty($gebruiker)) {
-
-        $auteur = $gebruiker["auteur"];
-
-    }
-
-    $titel = "";
-
-    if (!empty($gebruiker)) {
-
-        $titel  = $gebruiker["titel"];
-
-    }
-
-    $bericht = "";
-
-    if (!empty($gebruiker)) {
-
-        $bericht = $gebruiker["bericht"];
-
-    }
-
-    $afbeelding = "";
-
-    if (!empty($gebruiker)) {
-
-        $afbeelding = $gebruiker["afbeelding"];
-
-    }
-
-
-
-    ?>
-
     <div class="container">
+        <div class="form-group">
+            <label for="Auteur">Auteur</label>
+            <input class="form-control" type="text" id="auteur" name="auteur" required>
+        </div>
 
-    <div class="form-group">
-        <label for="Titel"> auteur</label>
-        <input class="form-control" type="text" id="auteur" name="auteur"
-               value="<?php echo $auteur;?>"required>
+        <div class="form-group">
+            <label for="Titel">Titel</label>
+            <input class="form-control" type="text" id="titel" name="titel" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Bericht">Bericht</label>
+            <input class="form-control" type="text" id="bericht" name="bericht" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Afbeelding">Afbeelding</label>
+            <input class="form-control" type="file" id="afbeelding" name="afbeelding" required>
+        </div>
+
+        <input type="submit" value="submit">
     </div>
-
-    <div class="form-group">
-        <label for="Titel"> titel </label>
-        <input class="form-control" type="text" id="titel" name="titel"
-               value="<?php echo $titel;?>"required>
-    </div>
-
-    <div class="form-group">
-        <label for="Titel"> bericht </label>
-        <input class="form-control" type="text" id="bericht" name="bericht"
-               value="<?php echo $bericht;?>"required>
-    </div>
-
-    <div class="form-group">
-        <label for="Titel"> afbeelding </label>
-        <input class="form-control" type="file" id="afbeelding" name="afbeelding"
-               value="<?php echo $afbeelding;?>"required>
-    </div>
-
-  <input type="submit" value="submit">
-        <div>
-
 </form>
 
+<?php
 
+$auteur = "";
+if (!empty($_POST["auteur"])) {
 
+    $auteur = $_POST["auteur"];
+}
 
+$titel = "";
+if (!empty($_POST["titel"])) {
 
+    $titel  = $_POST["titel"];
+}
 
+$bericht = "";
+if (!empty($_POST["bericht"])) {
 
+    $bericht = $_POST["bericht"];
+}
+
+$afbeelding = "";
+if (!empty($_POST["afbeelding"])) {
+
+    $afbeelding = $_POST["afbeelding"];
+}
+
+?>
